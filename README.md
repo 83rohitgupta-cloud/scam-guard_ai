@@ -20,7 +20,32 @@ LLM used : gemini-2.5-flash-lite
     - `pip install -r requirements.txt`
 	
 
-## project structure
+## project folder structure
+scam_guard_ai
+
+- experiments
+    - workflow.ipynb
+- llm
+    - prompts
+        - react.md
+    - prompts.py
+- pipeline
+    - scam_detector
+        - builder.py
+        - detector.py
+        - executor.py
+        - parser.py
+- streamlit
+    - app.py
+- .gitignore
+- LICENSE
+- README.md
+- main.py
+- utils.py
+- config.py
+- requirements.txt
+
+## project structure description
 Scam_Guard_AI - Root folder for the Scam Detection AI project
 
 - experiments >> Sandbox area for testing ideas and experiments
