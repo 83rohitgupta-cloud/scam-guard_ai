@@ -23,7 +23,7 @@ def main():
 
     test_message = "Congratulations! You've won a free cruise to the Bahamas. Click here to claim your prize."
     try:
-        logger.info(f" Running the scam detection workflow")
+        logger.info(f"Running the scam detection workflow")
         result = detector.detect(test_message)
         print(f"Input message from the user : {test_message}")
         print(f"Detetcion result : {result}")
