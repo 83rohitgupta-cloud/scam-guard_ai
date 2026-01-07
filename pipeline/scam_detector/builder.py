@@ -3,7 +3,7 @@ This file contains main prompt generation functionality.
 Module to build prompts for the scam detection model. With the "react" strategy, it generates a prompt that encourages the model to reason step-by-step before arriving at a conclusion.
 """
 
-from llm.prompts.prompts import generate_prompt
+from llm.prompts import generate_prompt
 
 def build_prompt(message: str, strategy: str) -> str:
     """

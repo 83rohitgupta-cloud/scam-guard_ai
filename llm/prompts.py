@@ -3,7 +3,10 @@ from pathlib import Path
 from utils import load_file
 
 PROMPTS_DIR = Path(__file__).parent / "prompts"
-
+# print(Path(__file__).parent)
+# print('*'*50)
+# print(PROMPTS_DIR)
+# print('*'*50)
 def load_prompt(file_path: str) -> str:
     """
     Loads the prompt template from a file.
@@ -17,6 +20,7 @@ def load_prompt(file_path: str) -> str:
 
 
 PROMPT = load_prompt("react.md")
+# print(PROMPT)
 
 def generate_prompt(user_input: str) -> str:
     """
