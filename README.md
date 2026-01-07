@@ -8,7 +8,7 @@ Steps to use repository
 ## Project Folder
 scam-guard-ai
 - experiments
-    - ex1.ipynb
+    - workflow.ipynb
 - llm
     - prompts
 - pipeline
