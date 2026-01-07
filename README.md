@@ -3,9 +3,24 @@ Objective: Build a LLM application to detected the Scam messages
 
 LLM used : gemini-2.5-flash-lite
 
-Steps to use repository
+## Steps to use repository
 
-##project structure
+- Clone this repo
+
+- Create a virtual environment
+
+    - `Conda: conda create -n <venv_name> python==3.12 -y`
+
+- Activate virtual environment
+
+    - `Conda: conda activate <venv_name>`
+
+- Install dependencies
+
+    - `pip install -r requirements.txt`
+	
+
+## project structure
 Scam_Guard_AI - Root folder for the Scam Detection AI project
 
 - experiments >> Sandbox area for testing ideas and experiments
