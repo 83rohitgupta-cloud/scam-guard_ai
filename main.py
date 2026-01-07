@@ -1,7 +1,7 @@
 #imports
 from pathlib import Path
 import sys
-from pipeline.sam_detector.detector import ScamDetector
+from pipeline.scam_detector.detector  import ScamDetector
 from utils import get_logger
 
 #path normalization
