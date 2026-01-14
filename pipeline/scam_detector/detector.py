@@ -32,7 +32,7 @@ class ScamDetector:
         """
         logger.info("Starting scam detection for the message.")
         try:
-            prompt =  build_prompt(message, self.strategy) 
+            prompt =  build_prompt(message, self.strategy)      # merging user query with the system rompt template defined in builder.py (llm/prompts.py, react.md)
             raw_response = self.executor.execute(prompt)
             parsed_result = self.parser.parse(raw_response)
             logger.info("Scam detection completed successfully.")
