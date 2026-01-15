@@ -18,27 +18,23 @@ class ScamDetector:
        
         """
         logger.info("ScamDetector instance created.")
-        self.executor = LLMExecutor
-        self.parser = OutputParser
+        self.executor = LLMExecutor()
+        self.parser = OutputParser()
         self.strategy = strategy
         logger.info("Initialized the ScamDetector with strategy: %s", self.strategy)
 
     def detect(self, message: str) -> Dict[str, Any]:
         """
-        Detects whether the given message is a scam or not.
-        :param self : Description
-        :param strategy: The detection strategy to use. Default is "react".
-        :type strategy: str
+        Runs the main scam detection pipeline.
         """
-        logger.info("Starting scam detection for the message.")
+        logger.info(f"Started detection for input message")
         try:
-            prompt =  build_prompt(message, self.strategy)      # merging user query with the system rompt template defined in builder.py (llm/prompts.py, react.md)
+            prompt = build_prompt(message, self.strategy)
             raw_response = self.executor.execute(prompt)
-            parsed_result = self.parser.parse(raw_response)
-            logger.info("Scam detection completed successfully.")
+            parsed_result = self.parser.parse_llm_output(raw_response)
+            
+            logger.info(f"Detection successful!")
             return parsed_result
 
         except Exception as e:
-            logger.error("Error during scam detection: %s", e)
-            raise e
-        
+            logger.error(f"Detection pipeline failed: {e}")        

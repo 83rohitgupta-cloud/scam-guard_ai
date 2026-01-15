@@ -19,22 +19,26 @@ class LLMExecutor:
 
         logger.info("LLMExecutor initialized with model: %s", model)
 
-    @staticmethod
+   
     def execute(self, prompt: str) -> str:
         """
-        Executes the given prompt using a language model and returns the response.
-        :param prompt: The prompt to be executed.
-        :type prompt: str
-        :return: The response from the language model.
-        :rtype: str
+        Executes the prompt using LLM client and returns raw response.
+
+        Args:
+            prompt: The formatted prompt string to send to LLM.
+        Returns:
+            Raw response from LLM.
+        Raises:
+            Exception: When LLM call fails.
         """
-        logger.info("Executing LLM prompt.")
-        # Simulated LLM response for demonstration purposes.
-        try :
+        logger.info(f"Executing LLM with final prompt")
+        try:
             response = self.llm.call(prompt)
-            logger.info("LLM prompt executed successfully.")
+            logger.info("LLM execution is successful!")
+
             return response
+        
         except Exception as e:
-            logger.error("Error executing LLM prompt: %s", e)
-            raise e
+            logger.error(f"LLM execution failed: {str(e)}")
+            raise
             
