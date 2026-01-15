@@ -5,7 +5,7 @@ LLM Client for Google Gemini API with retry logic and incremental backoff.
 import time
 from google import genai
 from utils import get_logger
-from config import GEMNI_API_KEY, DEFAULT_MODEL, MAX_RETRIES, RETRY_DELAY
+from config import GEMINI_API_KEY, DEFAULT_MODEL, MAX_RETRIES, RETRY_DELAY
 
 logger = get_logger(__name__)
 
@@ -23,7 +23,7 @@ class LLMClient:
         self.model_name = model_name
         self.max_retries = max_retries
         self.retry_delay = retry_delay  
-        self.client = genai.Client(api_key=GEMNI_API_KEY)
+        self.client = genai.Client(api_key=GEMINI_API_KEY)
         logger.info("LLMClient initialized with model: %s", self.model_name)
 
     def call(self, prompt: str, **kwargs) -> str:
