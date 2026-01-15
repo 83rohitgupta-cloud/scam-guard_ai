@@ -1,6 +1,6 @@
 
 from typing import Any
-from utils import get_logger, extract_json
+from utils import get_logger, extract_json_from_text
 logger = get_logger(__name__)
 
 
@@ -25,7 +25,7 @@ class OutputParser:
         """
         logger.info("Parsing LLM response.")
         try:
-            parsed_output = extract_json(llm_output)
+            parsed_output = extract_json_from_text(llm_output)
             logger.info("LLM response parsed successfully.")
             return parsed_output
         except Exception as e:
